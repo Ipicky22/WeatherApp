@@ -12,8 +12,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         requestCurrentlyDetail()
-        tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
-        //setUpTableView()
+        setUpTableView()
     }
     
     func requestCurrentlyDetail() {
@@ -29,12 +28,16 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-//    func setUpTableView() {
-//        tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
-//        tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
-//        tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
-//        tableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: "DailyTableViewCell_ID")
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func setUpTableView() {
+        tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
+        tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
+        tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
+        tableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: "DailyTableViewCell_ID")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -57,10 +60,37 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "")
                 return cellHeader
             }
+        case 1:
+            if indexPath.row == 0 {
+                if let cellHeaderHourly = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath)
+                    as? ForecastTextTableViewCell {
+                    cellHeaderHourly.configure(summary: weather?.hourly.summary ?? "")
+                    return cellHeaderHourly
+                }
+            } else {
+                if let cellDetailsHourly = tableView.dequeueReusableCell(withIdentifier: "HourlyTableViewCell_ID", for: indexPath)
+                    as? HourlyTableViewCell {
+                    cellDetailsHourly.configure(time: weather?.hourly.data[indexPath.row].time ?? 0, temperature: weather?.hourly.data[indexPath.row].temperature ?? 0, humidity: weather?.hourly.data[indexPath.row].humidity ?? 0)
+                    return cellDetailsHourly
+                }
+            }
+        case 2:
+            if indexPath.row == 0 {
+                if let cellHeaderDaily = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath) as? ForecastTextTableViewCell {
+                    cellHeaderDaily.configure(summary: weather?.daily.summary ?? "")
+                    return cellHeaderDaily
+                }
+            } else {
+                if let cellDetailDaily = tableView.dequeueReusableCell(withIdentifier: "DailyTableViewCell_ID", for: indexPath) as? DailyTableViewCell {
+                    cellDetailDaily.configure(day: weather?.daily.data[indexPath.row].time ?? 0, temperatureHigh:  weather?.daily.data[indexPath.row].temperatureHigh ?? 0, temperatureLow:  weather?.daily.data[indexPath.row].temperatureLow ?? 0)
+                    return cellDetailDaily
+                }
+            }
+            
         default:
             return UITableViewCell()
         }
-    return UITableViewCell()
+        return UITableViewCell()
     }
-
+    
 }

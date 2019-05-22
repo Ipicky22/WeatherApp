@@ -170,10 +170,10 @@
 		7A87F54B229523FE001396A0 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				7A87F57F229525C0001396A0 /* Cell */,
-				7A87F57E229525B9001396A0 /* Controller */,
 				7A87F57D229525B0001396A0 /* API */,
 				7A87F57C22952591001396A0 /* Model */,
+				7A87F57F229525C0001396A0 /* Cell */,
+				7A87F57E229525B9001396A0 /* Controller */,
 				7A87F54C229523FE001396A0 /* AppDelegate.swift */,
 				7A87F550229523FE001396A0 /* Main.storyboard */,
 				7A87F55322952400001396A0 /* Assets.xcassets */,
@@ -230,8 +230,8 @@
 		7A87F57F229525C0001396A0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7A5AC1C822957155008FC7D1 /* ForecastText */,
 				7A5AC1C322957107008FC7D1 /* Header */,
+				7A5AC1C822957155008FC7D1 /* ForecastText */,
 				7A87F58C2295276F001396A0 /* Hourly */,
 				7A87F58D22952780001396A0 /* Daily */,
 				7A87F592229527B1001396A0 /* Extra */,
@@ -684,13 +684,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Adrien.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -702,13 +703,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Adrien.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
