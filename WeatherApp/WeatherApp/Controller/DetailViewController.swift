@@ -13,7 +13,10 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         requestCurrentlyDetail()
         tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
-        //setUpTableView()
+        tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
+        tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
+        tableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: "DailyTableViewCell_ID")
+
     }
     
     func requestCurrentlyDetail() {
@@ -29,12 +32,6 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-//    func setUpTableView() {
-//        tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
-//        tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
-//        tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
-//        tableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: "DailyTableViewCell_ID")
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -55,6 +52,13 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             if let cellHeader = tableView.dequeueReusableCell(withIdentifier:"HeaderTableViewCell_ID", for: indexPath)
                 as? HeaderTableViewCell {
                 cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "")
+                return cellHeader
+            }
+            
+        case 1:
+            if let cellHeader = tableView.dequeueReusableCell(withIdentifier:"ForecastTextTableViewCell_ID", for: indexPath)
+                as? ForecastTextTableViewCell {
+                cellHeader.configure( summary: weather?.hourly.summary ?? "")
                 return cellHeader
             }
         default:

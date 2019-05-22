@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="322" height="84.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8n-LE-IL0">
-                        <rect key="frame" x="156" y="19" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDV-Ch-pCf">
+                        <rect key="frame" x="106" y="40" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -31,8 +31,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="summary" destination="a8n-LE-IL0" id="39i-uD-eZs"/>
-                <outlet property="summaryLabel" destination="a8n-LE-IL0" id="a8t-CE-A6S"/>
+                <outlet property="summaryLabel" destination="gDV-Ch-pCf" id="YIr-zm-5aV"/>
             </connections>
             <point key="canvasLocation" x="139.13043478260872" y="154.35267857142856"/>
         </tableViewCell>
