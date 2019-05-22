@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A0280CC1378566D4ED03030 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4690E777D1C489ACEADBE9AD /* Pods_WeatherApp.framework */; };
 		3E7A8AE12E0F76C91C93BE4A /* Pods_WeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9004716B7028E358C1EC6 /* Pods_WeatherAppUITests.framework */; };
+		528D60692295D18700BEB0E3 /* ExtraFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D60672295D18700BEB0E3 /* ExtraFirstTableViewCell.xib */; };
+		528D606A2295D18700BEB0E3 /* ExtraFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D60682295D18700BEB0E3 /* ExtraFirstTableViewCell.swift */; };
 		7A5AC1C1229570FE008FC7D1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AC1BF229570FE008FC7D1 /* HeaderTableViewCell.swift */; };
 		7A5AC1C2229570FE008FC7D1 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5AC1C0229570FE008FC7D1 /* HeaderTableViewCell.xib */; };
 		7A5AC1C62295714A008FC7D1 /* ForecastTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AC1C42295714A008FC7D1 /* ForecastTextTableViewCell.swift */; };
@@ -54,6 +56,8 @@
 		0CB40876330A68EBC108BCB9 /* Pods-WeatherAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherAppUITests/Pods-WeatherAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2545813E21DE97A03388D5C0 /* Pods_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4690E777D1C489ACEADBE9AD /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		528D60672295D18700BEB0E3 /* ExtraFirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtraFirstTableViewCell.xib; sourceTree = "<group>"; };
+		528D60682295D18700BEB0E3 /* ExtraFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraFirstTableViewCell.swift; sourceTree = "<group>"; };
 		7A5AC1BF229570FE008FC7D1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		7A5AC1C0229570FE008FC7D1 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		7A5AC1C42295714A008FC7D1 /* ForecastTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTextTableViewCell.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 		7A87F592229527B1001396A0 /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				528D60682295D18700BEB0E3 /* ExtraFirstTableViewCell.swift */,
+				528D60672295D18700BEB0E3 /* ExtraFirstTableViewCell.xib */,
 				7A5AC1D12295719B008FC7D1 /* ExtraTableViewCell.swift */,
 				7A5AC1D22295719B008FC7D1 /* ExtraTableViewCell.xib */,
 			);
@@ -387,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528D60692295D18700BEB0E3 /* ExtraFirstTableViewCell.xib in Resources */,
 				7A5AC1CC2295716E008FC7D1 /* HourlyTableViewCell.xib in Resources */,
 				7A5AC1C72295714A008FC7D1 /* ForecastTextTableViewCell.xib in Resources */,
 				7A5AC1C2229570FE008FC7D1 /* HeaderTableViewCell.xib in Resources */,
@@ -507,6 +514,7 @@
 				7A87F59622952907001396A0 /* WeatherModel.swift in Sources */,
 				7A5AC1CB2295716E008FC7D1 /* HourlyTableViewCell.swift in Sources */,
 				7A87F585229526F9001396A0 /* RequestWeather.swift in Sources */,
+				528D606A2295D18700BEB0E3 /* ExtraFirstTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
