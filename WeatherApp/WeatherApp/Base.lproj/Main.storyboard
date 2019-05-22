@@ -13,16 +13,17 @@
         <!--Navigation Controller-->
         <scene sceneID="3t8-Kz-60l">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jub-8u-jx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="cfY-WN-22N" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JJc-Tc-UQo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.74056739500000002" blue="0.085028804629999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Aar-C2-XWb" kind="relationship" relationship="rootViewController" id="cnU-Fx-cLQ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jub-8u-jx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-216" y="72"/>
         </scene>
@@ -50,6 +51,7 @@
                     <navigationItem key="navigationItem" id="mIk-yK-o5s"/>
                     <connections>
                         <outlet property="mapView" destination="48S-NB-1vp" id="HFP-YO-avQ"/>
+                        <segue destination="oyc-5m-4tS" kind="show" identifier="DetailWeather_ID" id="9Jj-Tw-acv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xp-xo-AOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-S5-9tr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yn9-W1-JpL">

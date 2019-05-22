@@ -1,12 +1,13 @@
 import Foundation
 import CoreLocation
 
-struct City {
-    var name:String
-    var coordinates: CLLocationCoordinate2D
-}
 
 struct CitiesData {
+    
+    struct City {
+        var name: String
+        var coordinates: CLLocationCoordinate2D
+    }
     
     static let list = [
         City(name: "San Francisco", coordinates: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)),
