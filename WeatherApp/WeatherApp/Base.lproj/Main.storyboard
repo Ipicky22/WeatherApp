@@ -33,7 +33,18 @@
                     <view key="view" contentMode="scaleToFill" id="gC9-gn-Gy1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="48S-NB-1vp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WdG-cB-CA0" firstAttribute="bottom" secondItem="48S-NB-1vp" secondAttribute="bottom" id="Kl2-Bh-wyb"/>
+                            <constraint firstItem="48S-NB-1vp" firstAttribute="leading" secondItem="WdG-cB-CA0" secondAttribute="leading" id="Oyj-53-fn2"/>
+                            <constraint firstItem="WdG-cB-CA0" firstAttribute="trailing" secondItem="48S-NB-1vp" secondAttribute="trailing" id="PD8-Va-JNE"/>
+                            <constraint firstItem="48S-NB-1vp" firstAttribute="top" secondItem="WdG-cB-CA0" secondAttribute="top" id="hgL-xy-2Vf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WdG-cB-CA0"/>
                     </view>
                 </viewController>
@@ -48,7 +59,29 @@
                     <view key="view" contentMode="scaleToFill" id="Shh-c5-eNQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-S5-9tr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yn9-W1-JpL">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yn9-W1-JpL" id="dDg-os-tda">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gN6-oT-bqp" firstAttribute="trailing" secondItem="ObU-S5-9tr" secondAttribute="trailing" id="Azb-yO-Mac"/>
+                            <constraint firstItem="ObU-S5-9tr" firstAttribute="top" secondItem="gN6-oT-bqp" secondAttribute="top" id="Vkf-u9-KmA"/>
+                            <constraint firstItem="ObU-S5-9tr" firstAttribute="leading" secondItem="gN6-oT-bqp" secondAttribute="leading" id="cRl-Mb-gx3"/>
+                            <constraint firstItem="gN6-oT-bqp" firstAttribute="bottom" secondItem="ObU-S5-9tr" secondAttribute="bottom" id="qgn-bh-xng"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gN6-oT-bqp"/>
                     </view>
                 </viewController>

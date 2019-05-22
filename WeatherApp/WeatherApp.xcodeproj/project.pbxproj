@@ -23,6 +23,7 @@
 		7A87F58F22952797001396A0 /* DailyHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87F58E22952797001396A0 /* DailyHeaderTableViewCell.swift */; };
 		7A87F591229527A5001396A0 /* DailyDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87F590229527A5001396A0 /* DailyDetailTableViewCell.swift */; };
 		7A87F594229527FC001396A0 /* ExtraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87F593229527FC001396A0 /* ExtraTableViewCell.swift */; };
+		7A87F59622952907001396A0 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87F59522952907001396A0 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		7A87F58E22952797001396A0 /* DailyHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		7A87F590229527A5001396A0 /* DailyDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7A87F593229527FC001396A0 /* ExtraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraTableViewCell.swift; sourceTree = "<group>"; };
+		7A87F59522952907001396A0 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		7A87F57C22952591001396A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7A87F59522952907001396A0 /* WeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				7A87F591229527A5001396A0 /* DailyDetailTableViewCell.swift in Sources */,
 				7A87F58B22952767001396A0 /* HearlyDetailTableViewCell.swift in Sources */,
 				7A87F58722952736001396A0 /* HeaderTableViewCell.swift in Sources */,
+				7A87F59622952907001396A0 /* WeatherModel.swift in Sources */,
 				7A87F585229526F9001396A0 /* RequestWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
