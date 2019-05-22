@@ -12,6 +12,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         requestCurrentlyDetail()
+        // setUpTableView()
     }
     
     func requestCurrentlyDetail() {
@@ -19,20 +20,46 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             latitude: annotationDetail?.coordinate.latitude ?? 0,
             longitude: annotationDetail?.coordinate.longitude ?? 0,
             success: { (data) in
-            let decoder = JSONDecoder()
-            self.weather = (try? decoder.decode(WeatherModel.self, from: data))
-            self.tableView.reloadData()
+                let decoder = JSONDecoder()
+                self.weather = (try? decoder.decode(WeatherModel.self, from: data))
+                self.tableView.reloadData()
         }) { (error) in
             print(error)
         }
     }
     
+    func setUpTableView() {
+        tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
+//        tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
+//        tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
+//        tableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: "DailyTableViewCell_ID")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return weather?.hourly.data.count ?? 0
+        case 2:
+            return weather?.daily.data.count ?? 0
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        switch indexPath.section {
+        case 0:
+            if let cellHeader = tableView.dequeueReusableCell(withIdentifier:"HeaderTableViewCell_ID", for: indexPath)
+                as? HeaderTableViewCell {
+                cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "")
+                return cellHeader
+            }
+        default:
+            return UITableViewCell()
+        }
+    return UITableViewCell()
     }
-    
+
 }

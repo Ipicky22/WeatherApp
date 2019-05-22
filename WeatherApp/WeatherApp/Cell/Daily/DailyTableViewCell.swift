@@ -10,15 +10,14 @@ import UIKit
 
 class DailyTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var temperatureHighLabel: UILabel!
+    @IBOutlet weak var temperatureLowLabel: UILabel!
     
+    func configure(day: String, temperatureHigh: Double, temperatureLow: Double) {
+        dayLabel.text = day
+        temperatureHighLabel.text = String(temperatureHigh)
+        temperatureLowLabel.text = String(temperatureLow)
+        
+    }
 }
