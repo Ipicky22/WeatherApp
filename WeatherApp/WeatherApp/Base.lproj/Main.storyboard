@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-216" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="k5w-jY-hai">
             <objects>
-                <viewController id="Aar-C2-XWb" sceneMemberID="viewController">
+                <viewController id="Aar-C2-XWb" customClass="MapViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gC9-gn-Gy1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,15 +47,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WdG-cB-CA0"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="48S-NB-1vp" id="HFP-YO-avQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xp-xo-AOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="674" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="DEK-rO-cv0">
             <objects>
-                <viewController id="oyc-5m-4tS" sceneMemberID="viewController">
+                <viewController id="oyc-5m-4tS" customClass="DetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Shh-c5-eNQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
