@@ -46,7 +46,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="day" destination="Gvh-bB-Oj8" id="CUo-5f-opt"/>
+                <outlet property="dayLabel" destination="Gvh-bB-Oj8" id="T96-Jl-UEB"/>
+                <outlet property="temperatureHighLabel" destination="cAH-el-SEg" id="bLl-eg-EXD"/>
                 <outlet property="temperatureLow" destination="V6y-dO-38d" id="TYO-VZ-pqC"/>
+                <outlet property="temperatureLowLabel" destination="V6y-dO-38d" id="Cdq-d9-D06"/>
                 <outlet property="temperaturemax" destination="cAH-el-SEg" id="ARf-5R-nwv"/>
             </connections>
             <point key="canvasLocation" x="152.17391304347828" y="172.43303571428569"/>

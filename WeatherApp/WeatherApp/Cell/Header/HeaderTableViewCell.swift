@@ -10,6 +10,7 @@ import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     

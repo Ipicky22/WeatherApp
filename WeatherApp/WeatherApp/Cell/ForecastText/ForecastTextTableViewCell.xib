@@ -32,6 +32,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="summary" destination="a8n-LE-IL0" id="39i-uD-eZs"/>
+                <outlet property="summaryLabel" destination="a8n-LE-IL0" id="a8t-CE-A6S"/>
             </connections>
             <point key="canvasLocation" x="139.13043478260872" y="154.35267857142856"/>
         </tableViewCell>

@@ -46,8 +46,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="humidity" destination="34u-Ld-8Ow" id="hWG-Gi-wIC"/>
+                <outlet property="humidityLabel" destination="34u-Ld-8Ow" id="I0u-cB-wMX"/>
                 <outlet property="temperature" destination="Cmu-8X-OG7" id="ORc-s0-TCG"/>
+                <outlet property="temperatureLabel" destination="Cmu-8X-OG7" id="ILZ-ly-zNp"/>
                 <outlet property="time" destination="E9M-zd-43u" id="jII-Cf-xm9"/>
+                <outlet property="timeLabel" destination="E9M-zd-43u" id="Gwt-DU-lJJ"/>
             </connections>
             <point key="canvasLocation" x="169.56521739130437" y="169.08482142857142"/>
         </tableViewCell>

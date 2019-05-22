@@ -9,7 +9,7 @@
 import UIKit
 
 class ForecastTextTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var summaryLabel: UILabel!
     
     func configure(summary: String){
