@@ -51,14 +51,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailWeather_ID" {
-            if let detailsWeather = segue.destination as? DetailViewController {
-                detailsWeather.annotationDetail = sender as? MKPointAnnotation
-            }
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
     }
@@ -71,5 +63,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         return UITableViewCell()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailWeather_ID" {
+            if let detailsWeather = segue.destination as? DetailViewController {
+                detailsWeather.annotationDetail = sender as? MKPointAnnotation
+            }
+        }
+    }
     
 }

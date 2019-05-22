@@ -62,7 +62,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         case 0:
             if let cellHeader = tableView.dequeueReusableCell(withIdentifier:"HeaderTableViewCell_ID", for: indexPath)
                 as? HeaderTableViewCell {
-                cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "")
+                cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "", iconHeader: weather?.currently.icon ?? "")
                 return cellHeader
             }
         case 1:
