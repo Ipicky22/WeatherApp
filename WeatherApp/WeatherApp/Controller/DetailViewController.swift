@@ -6,7 +6,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var annotationDetail: MKPointAnnotation?
-    var currently: WeatherModel?
+    var weather: WeatherModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +20,8 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             longitude: annotationDetail?.coordinate.longitude ?? 0,
             success: { (data) in
             let decoder = JSONDecoder()
-            self.currently = (try? decoder.decode(WeatherModel.self, from: data))
+            self.weather = (try? decoder.decode(WeatherModel.self, from: data))
             self.tableView.reloadData()
-            print(self.currently)
         }) { (error) in
             print(error)
         }
