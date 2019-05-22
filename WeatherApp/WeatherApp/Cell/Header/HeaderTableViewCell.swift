@@ -1,5 +1,5 @@
 //
-//  ExtraTableViewCell.swift
+//  HeaderTableViewCell.swift
 //  WeatherApp
 //
 //  Created by Adrien Masson on 22/05/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExtraTableViewCell: UITableViewCell {
+class HeaderTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

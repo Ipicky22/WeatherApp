@@ -1,5 +1,5 @@
 //
-//  HeaderTableViewCell.swift
+//  HourlyTableViewCell.swift
 //  WeatherApp
 //
 //  Created by Adrien Masson on 22/05/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderTableViewCell: UITableViewCell {
+class HourlyTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +20,5 @@ class HeaderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
