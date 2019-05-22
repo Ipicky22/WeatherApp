@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Aar-C2-XWb" kind="show" id="htZ-rv-d2u"/>
+                        <segue destination="Aar-C2-XWb" kind="relationship" relationship="rootViewController" id="cnU-Fx-cLQ"/>
                     </connections>
                 </navigationController>
             </objects>
@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="48S-NB-1vp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,6 +47,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WdG-cB-CA0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mIk-yK-o5s"/>
                     <connections>
                         <outlet property="mapView" destination="48S-NB-1vp" id="HFP-YO-avQ"/>
                     </connections>

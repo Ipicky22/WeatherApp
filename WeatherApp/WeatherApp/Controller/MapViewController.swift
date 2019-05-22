@@ -9,7 +9,11 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        for City in CitiesData.list {
+            let pin = MKPointAnnotation()
+            pin.coordinate = City.coordinates
+            mapView.addAnnotation(pin)
+        }
     }
 
 
