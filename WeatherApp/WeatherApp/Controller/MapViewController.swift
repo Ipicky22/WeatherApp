@@ -18,7 +18,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
             tableView.isHidden = false
             mapView.isHidden = true
             
-        } else {
+        } else {    
             mapView.isHidden = false
             tableView.isHidden = true
         }
@@ -43,12 +43,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         setUpTableView()
     }
     
+    
     private func setUpTableView() {
         tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: "CityTableViewCell_ID")
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? MKPointAnnotation  {
+            mapView.deselectAnnotation(annotation, animated: false)
             performSegue(withIdentifier: "DetailWeather_ID", sender: annotation)
         }
     }
@@ -70,6 +72,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     
         if segue.identifier == "DetailWeather_ID" {
             if let detailsWeatherMap = segue.destination as? DetailViewController {
@@ -82,6 +88,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
                 annotation.coordinate = cities[element.row].coordinates
                 annotation.title = cities[element.row].name
                 detailsWeatherList.annotationDetail = annotation
+                tableView.deselectRow(at: element, animated: false)
             }
         }
     }

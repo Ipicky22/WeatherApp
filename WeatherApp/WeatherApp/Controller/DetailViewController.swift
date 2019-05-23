@@ -7,17 +7,42 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     
     var annotationDetail: MKPointAnnotation?
     var weather: WeatherModel?
+    var vSpinner : UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         self.navigationItem.title = annotationDetail?.title
+        
+        showSpinner(onView: self.view)
         requestCurrentlyDetail()
         setUpTableView()
-
     }
     
-    func requestCurrentlyDetail() {
+    
+    private func showSpinner(onView : UIView) {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+       self.vSpinner = spinnerView
+    }
+    
+    private func removeSpinner() {
+        DispatchQueue.main.async {
+            self.vSpinner?.removeFromSuperview()
+            self.vSpinner = nil
+        }
+    }
+    
+    private func requestCurrentlyDetail() {
         RequestWeather.requestCurrently(
             latitude: annotationDetail?.coordinate.latitude ?? 0,
             longitude: annotationDetail?.coordinate.longitude ?? 0,
@@ -25,6 +50,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 let decoder = JSONDecoder()
                 self.weather = (try? decoder.decode(WeatherModel.self, from: data))
                 self.tableView.reloadData()
+                self.removeSpinner()
         }) { (error) in
             print(error)
         }
@@ -34,8 +60,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         return 4
     }
     
-    func setUpTableView() {
-        
+   private func setUpTableView() {
         tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
         tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
         tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
@@ -53,7 +78,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             if (weather?.hourly.data.count ?? 0 > 10) {
                 return 10
             } else {
-                return weather?.hourly.data.count ?? 0                
+                return weather?.hourly.data.count ?? 0
             }
         case 2:
               return weather?.daily.data.count ?? 0
