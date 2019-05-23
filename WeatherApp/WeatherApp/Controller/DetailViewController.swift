@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         requestCurrentlyDetail()
         setUpTableView()
+
     }
     
     func requestCurrentlyDetail() {
@@ -27,7 +28,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             print(error)
         }
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -41,6 +42,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         tableView.register(UINib(nibName: "ExtraFirstTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraFirstTableViewCell_ID")
         tableView.register(UINib(nibName: "ExtraTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraTableViewCell_ID")
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -65,6 +67,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "", iconHeader: weather?.currently.icon ?? "")
                 return cellHeader
             }
+
         case 1:
             if indexPath.row == 0 {
                 if let cellHeaderHourly = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath)
@@ -109,6 +112,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 }
             }
             
+
         default:
             return UITableViewCell()
         }

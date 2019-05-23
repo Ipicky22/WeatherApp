@@ -18,8 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="383" height="84.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8n-LE-IL0">
                         <rect key="frame" x="183" y="19" width="171" height="36"/>
+
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -30,7 +32,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+
                 <outlet property="summaryLabel" destination="a8n-LE-IL0" id="a8t-CE-A6S"/>
+
             </connections>
             <point key="canvasLocation" x="358.69565217391306" y="106.13839285714285"/>
         </tableViewCell>
