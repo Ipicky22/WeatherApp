@@ -60,7 +60,7 @@
                         <viewLayoutGuide key="safeArea" id="WdG-cB-CA0"/>
                     </view>
                     <navigationItem key="navigationItem" id="mIk-yK-o5s">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="menu" id="v5I-SF-43e">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="v5I-SF-43e">
                             <connections>
                                 <action selector="pressButton:" destination="Aar-C2-XWb" id="4W3-5h-TJT"/>
                             </connections>
@@ -111,9 +111,6 @@
             <point key="canvasLocation" x="1523" y="72"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="menu" width="25" height="25"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Alh-M9-4xa"/>
     </inferredMetricsTieBreakers>

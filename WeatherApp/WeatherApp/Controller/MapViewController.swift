@@ -17,10 +17,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         if tableView.isHidden == true {
             tableView.isHidden = false
             mapView.isHidden = true
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "worldwide")
             
-        } else {    
+        } else {
+            
             mapView.isHidden = false
             tableView.isHidden = true
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")
         }
     }
     
@@ -32,8 +35,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         tableView.dataSource = self
         tableView.delegate = self
         self.navigationItem.title = "Weather"
+        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")
         
         for city in CitiesData.list {
+            
             let pin = MKPointAnnotation()
             pin.coordinate = city.coordinates
             pin.title = city.name
@@ -55,10 +60,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            performSegue(withIdentifier: "CityTableViewCell_ID", sender: self)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
     }
@@ -69,6 +70,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
             return cellCity
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CityTableViewCell_ID", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
