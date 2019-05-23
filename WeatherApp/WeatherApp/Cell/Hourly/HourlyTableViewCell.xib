@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34u-Ld-8Ow">
-                        <rect key="frame" x="150" y="85" width="42" height="21"/>
+                        <rect key="frame" x="150" y="85" width="42" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -45,12 +44,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="humidity" destination="34u-Ld-8Ow" id="hWG-Gi-wIC"/>
-                <outlet property="humidityLabel" destination="34u-Ld-8Ow" id="I0u-cB-wMX"/>
-                <outlet property="temperature" destination="Cmu-8X-OG7" id="ORc-s0-TCG"/>
-                <outlet property="temperatureLabel" destination="Cmu-8X-OG7" id="ILZ-ly-zNp"/>
-                <outlet property="time" destination="E9M-zd-43u" id="jII-Cf-xm9"/>
-                <outlet property="timeLabel" destination="E9M-zd-43u" id="Gwt-DU-lJJ"/>
+                <outlet property="humidityLabel" destination="34u-Ld-8Ow" id="uuu-es-IdP"/>
+                <outlet property="temperatureLabel" destination="Cmu-8X-OG7" id="QlK-jA-N0x"/>
+                <outlet property="timeLabel" destination="E9M-zd-43u" id="rNi-ws-GH4"/>
             </connections>
             <point key="canvasLocation" x="169.56521739130437" y="169.08482142857142"/>
         </tableViewCell>

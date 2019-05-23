@@ -15,8 +15,8 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureHighLabel: UILabel!
     @IBOutlet weak var temperatureLowLabel: UILabel!
     
-    func configure(day: String, temperatureHigh: Double, temperatureLow: Double) {
-        dayLabel.text = day
+    func configure(day: Int, temperatureHigh: Double, temperatureLow: Double) {
+        dayLabel.text = String(day)
         temperatureHighLabel.text = String(temperatureHigh)
         temperatureLowLabel.text = String(temperatureLow)
         

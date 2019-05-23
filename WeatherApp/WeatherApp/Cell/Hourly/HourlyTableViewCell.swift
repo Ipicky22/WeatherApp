@@ -14,7 +14,7 @@ class HourlyTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     
-    func configure(time: Double, temperature: Double, humidity: Double) {
+    func configure(time: Int, temperature: Double, humidity: Double) {
         timeLabel.text = String(time)
         temperatureLabel.text = String(temperature)
         humidityLabel.text = String(humidity)
