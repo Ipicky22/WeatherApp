@@ -44,7 +44,6 @@
 		7A87F59622952907001396A0 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87F59522952907001396A0 /* WeatherModel.swift */; };
 		CC819554229685A500E16F70 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC819552229685A500E16F70 /* CityTableViewCell.xib */; };
 		CC819555229685A500E16F70 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC819553229685A500E16F70 /* CityTableViewCell.swift */; };
-		CC81955A2296A9FF00E16F70 /* rainBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC8195592296A9FF00E16F70 /* rainBack.jpg */; };
 		DD4ABF87A9013B1CF2C03431 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2545813E21DE97A03388D5C0 /* Pods_WeatherAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,7 +112,6 @@
 		C3A9004716B7028E358C1EC6 /* Pods_WeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC819552229685A500E16F70 /* CityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		CC819553229685A500E16F70 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
-		CC8195592296A9FF00E16F70 /* rainBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rainBack.jpg; path = ../../../../rainBack.jpg; sourceTree = "<group>"; };
 		D8B16BCBC9D7775B1B5E7BD5 /* Pods-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherAppTests/Pods-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC990BD3768666A137AE47F9 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		F91FDBCFA9CF7784FAB50DD2 /* Pods-WeatherAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherAppUITests/Pods-WeatherAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 		7A87F54B229523FE001396A0 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				CC8195562296A4C600E16F70 /* Background */,
 				528A03C52295F436008496DD /* Icon */,
 				7A87F57D229525B0001396A0 /* API */,
 				7A87F57C22952591001396A0 /* Model */,
@@ -325,14 +322,6 @@
 				7A5AC1D22295719B008FC7D1 /* ExtraTableViewCell.xib */,
 			);
 			path = Extra;
-			sourceTree = "<group>";
-		};
-		CC8195562296A4C600E16F70 /* Background */ = {
-			isa = PBXGroup;
-			children = (
-				CC8195592296A9FF00E16F70 /* rainBack.jpg */,
-			);
-			path = Background;
 			sourceTree = "<group>";
 		};
 		F69311D772C93EA17D0D6316 /* Pods */ = {
@@ -465,7 +454,6 @@
 				5207E2242295F49F00F4E495 /* partly-cloudy-night.png in Resources */,
 				7A5AC1C72295714A008FC7D1 /* ForecastTextTableViewCell.xib in Resources */,
 				5207E2222295F49F00F4E495 /* clear-day.png in Resources */,
-				CC81955A2296A9FF00E16F70 /* rainBack.jpg in Resources */,
 				5207E2202295F49F00F4E495 /* rain.png in Resources */,
 				7A5AC1C2229570FE008FC7D1 /* HeaderTableViewCell.xib in Resources */,
 				5207E21C2295F49F00F4E495 /* wind.png in Resources */,
