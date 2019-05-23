@@ -18,35 +18,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="123.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLr-ob-Oc4">
-                        <rect key="frame" x="231" y="19" width="146" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLr-ob-Oc4">
+                        <rect key="frame" x="186" y="16" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hR-Yw-bJf">
-                        <rect key="frame" x="36" y="25" width="140" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hR-Yw-bJf">
+                        <rect key="frame" x="16" y="16" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-rP-Bt7">
-                        <rect key="frame" x="36" y="71" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-rP-Bt7">
+                        <rect key="frame" x="16" y="53" width="45" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-59-8g0">
-                        <rect key="frame" x="231" y="71" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-59-8g0">
+                        <rect key="frame" x="189" y="53" width="45" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.062745098039215685" green="0.2627450980392157" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="RGl-rP-Bt7" firstAttribute="top" secondItem="7hR-Yw-bJf" secondAttribute="bottom" constant="16" id="0TZ-0D-2Nt"/>
+                    <constraint firstItem="RGl-rP-Bt7" firstAttribute="top" secondItem="7hR-Yw-bJf" secondAttribute="bottom" constant="16" id="4Ae-SQ-a4J"/>
+                    <constraint firstAttribute="bottom" secondItem="RGl-rP-Bt7" secondAttribute="bottom" constant="16" id="63z-Gk-zQo"/>
+                    <constraint firstAttribute="bottom" secondItem="WRX-59-8g0" secondAttribute="bottom" constant="16" id="6TT-wj-iOa"/>
+                    <constraint firstItem="7hR-Yw-bJf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="FR6-U1-g4A"/>
+                    <constraint firstItem="RGl-rP-Bt7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Rah-Cr-FBU"/>
+                    <constraint firstItem="WRX-59-8g0" firstAttribute="leading" secondItem="RGl-rP-Bt7" secondAttribute="trailing" constant="128" id="RuM-LX-nU8"/>
+                    <constraint firstAttribute="trailing" secondItem="WRX-59-8g0" secondAttribute="trailing" constant="16" id="Tav-WU-blx"/>
+                    <constraint firstItem="OLr-ob-Oc4" firstAttribute="leading" secondItem="7hR-Yw-bJf" secondAttribute="trailing" constant="128" id="XvE-BO-5rI"/>
+                    <constraint firstItem="7hR-Yw-bJf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="fpm-cE-8be"/>
+                    <constraint firstItem="OLr-ob-Oc4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gvd-f2-68k"/>
+                    <constraint firstItem="WRX-59-8g0" firstAttribute="top" secondItem="OLr-ob-Oc4" secondAttribute="bottom" constant="16" id="uRb-P6-4qW"/>
+                    <constraint firstAttribute="trailing" secondItem="OLr-ob-Oc4" secondAttribute="trailing" constant="32" id="vPA-8h-QTm"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

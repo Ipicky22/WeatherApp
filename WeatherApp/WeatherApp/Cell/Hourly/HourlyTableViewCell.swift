@@ -13,11 +13,12 @@ class HourlyTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var iconImage: UIImageView!
     
-    func configure(time: Int, temperature: Double, humidity: Double) {
+    func configure(time: Int, temperature: Double, humidity: Double, iconHourly: String) {
         timeLabel.text = String(time)
         temperatureLabel.text = String(temperature)
         humidityLabel.text = String(humidity)
-        
+        iconImage.image = UIImage(named: "\(iconHourly)")
     }
 }

@@ -11,6 +11,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        self.navigationItem.title = annotationDetail?.title
         requestCurrentlyDetail()
         setUpTableView()
 
@@ -78,7 +79,8 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             } else {
                 if let cellDetailsHourly = tableView.dequeueReusableCell(withIdentifier: "HourlyTableViewCell_ID", for: indexPath)
                     as? HourlyTableViewCell {
-                    cellDetailsHourly.configure(time: weather?.hourly.data[indexPath.row].time ?? 0, temperature: weather?.hourly.data[indexPath.row].temperature ?? 0, humidity: weather?.hourly.data[indexPath.row].humidity ?? 0)
+                    cellDetailsHourly.configure(time: weather?.hourly.data[indexPath.row].time ?? 0, temperature: weather?.hourly.data[indexPath.row].temperature ?? 0, humidity: weather?.hourly.data[indexPath.row].humidity ?? 0,
+                                                iconHourly: weather?.hourly.data[indexPath.row].icon ?? "")
                     return cellDetailsHourly
                 }
             }
@@ -90,7 +92,8 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 }
             } else {
                 if let cellDetailDaily = tableView.dequeueReusableCell(withIdentifier: "DailyTableViewCell_ID", for: indexPath) as? DailyTableViewCell {
-                    cellDetailDaily.configure(day: weather?.daily.data[indexPath.row].time ?? 0, temperatureHigh:  weather?.daily.data[indexPath.row].temperatureHigh ?? 0, temperatureLow:  weather?.daily.data[indexPath.row].temperatureLow ?? 0)
+                    cellDetailDaily.configure(day: weather?.daily.data[indexPath.row].time ?? 0, temperatureHigh:  weather?.daily.data[indexPath.row].temperatureHigh ?? 0, temperatureLow:  weather?.daily.data[indexPath.row].temperatureLow ?? 0,
+                                            iconDaily: weather?.daily.data[indexPath.row].icon ?? ""  )
                     return cellDetailDaily
                 }
             }

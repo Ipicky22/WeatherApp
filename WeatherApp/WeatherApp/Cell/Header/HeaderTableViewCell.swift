@@ -19,6 +19,6 @@ class HeaderTableViewCell: UITableViewCell {
     func configure(temperature: Double, summary: String, iconHeader: String){
         temperatureLabel.text = String(temperature)
         summaryLabel.text = summary
-        iconImage.image = UIImage(named: "./Icon/\(iconHeader).png")
+        iconImage.image = UIImage(named: "\(iconHeader).png")
     }
 }
