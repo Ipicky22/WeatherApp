@@ -22,8 +22,8 @@ class ExtraFirstTableViewCell: UITableViewCell {
         humidityTitleLabel.text = "Humidity"
         windSpeedTitleLabel.text = "Wind Speed"
         
-        humidityLabel.text = String(humidity)
-        windSpeedLabel.text = String(windSpeed)
+        humidityLabel.text = String("\(Int(humidity * 100))%")
+        windSpeedLabel.text = String("\(Int(windSpeed * 3.6)) km/h")
     }
     
 }

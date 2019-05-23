@@ -30,6 +30,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         
         mapView.delegate = self
         tableView.dataSource = self
+        self.navigationItem.title = "Weather"
         
         for city in CitiesData.list {
             let pin = MKPointAnnotation()
@@ -41,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         setUpTableView()
     }
     
-    func setUpTableView() {
+    private func setUpTableView() {
         tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: "CityTableViewCell_ID")
     }
     
@@ -65,10 +66,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailWeather_ID" {
-            if let detailsWeather = segue.destination as? DetailViewController {
-                detailsWeather.annotationDetail = sender as? MKPointAnnotation
+            if let detailsWeatherMap = segue.destination as? DetailViewController {
+                detailsWeatherMap.annotationDetail = sender as? MKPointAnnotation
+            }
+        } else if segue.identifier == "CityTableViewCell_ID" {
+            if let detailsWeatherList = segue.destination as? DetailViewController,
+                let element = tableView.indexPathForSelectedRow {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = cities[element.row].coordinates
+                annotation.title = cities[element.row].name
+                detailsWeatherList.annotationDetail = annotation
             }
         }
     }
     
 }
+

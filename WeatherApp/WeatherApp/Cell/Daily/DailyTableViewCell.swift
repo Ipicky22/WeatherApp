@@ -16,10 +16,13 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLowLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     
-    func configure(day: Int, temperatureHigh: Double, temperatureLow: Double, iconDaily: String ) {
-        dayLabel.text = String(day)
-        temperatureHighLabel.text = String(temperatureHigh)
-        temperatureLowLabel.text = String(temperatureLow)
+    func configure(day: Double, temperatureHigh: Double, temperatureLow: Double, iconDaily: String ) {
+        let date = NSDate(timeIntervalSince1970: day)
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("EEEE")
+        dayLabel.text = "\(formatter.string(from: date as Date))"
+        temperatureHighLabel.text = String("\(Int(temperatureLow))°C")
+        temperatureLowLabel.text = String("\(Int(temperatureHigh))°C")
         iconImage.image = UIImage(named: "\(iconDaily)")
     }
 }

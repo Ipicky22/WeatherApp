@@ -22,7 +22,7 @@ class ExtraTableViewCell: UITableViewCell {
         pressureTitleLabel.text = "Pressure"
         uvIndexTitleLabel.text = "UV Index"
         
-        pressureLabel.text = String(pressure)
+        pressureLabel.text = String("\(Int(pressure)) hPa")
         uvIndexLabel.text = String(uvIndex)
         
     }

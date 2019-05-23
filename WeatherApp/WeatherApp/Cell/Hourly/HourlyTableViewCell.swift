@@ -15,10 +15,19 @@ class HourlyTableViewCell: UITableViewCell {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     
-    func configure(time: Int, temperature: Double, humidity: Double, iconHourly: String) {
-        timeLabel.text = String(time)
-        temperatureLabel.text = String(temperature)
-        humidityLabel.text = String(humidity)
+    func configure(time: Double, temperature: Double, humidity: Double, iconHourly: String) {
+        
+        let date = NSDate(timeIntervalSince1970: time)
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("HH")
+        timeLabel.text = "\(formatter.string(from: date as Date))"
+        
+        temperatureLabel.text = String("\(Int(temperature))°C")
+        if humidity > 0 {
+          humidityLabel.text = String("\(Int(humidity * 100))%")
+        } else {
+            humidityLabel.text = ""
+        }
         iconImage.image = UIImage(named: "\(iconHourly)")
     }
 }

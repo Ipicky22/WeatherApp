@@ -21,7 +21,7 @@ struct WeatherModel: Decodable {
     }
     
     struct DataHourly: Decodable{
-        var time: Int
+        var time: Double
         var icon: String
         var humidity: Double
         var temperature: Double
@@ -35,7 +35,7 @@ struct WeatherModel: Decodable {
     }
     
     struct DataDaily: Decodable {
-        var time: Int
+        var time: Double
         var icon: String
         var temperatureHigh: Double
         var temperatureLow: Double

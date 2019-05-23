@@ -50,9 +50,13 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return weather?.hourly.data.count ?? 0
+            if (weather?.hourly.data.count ?? 0 > 10) {
+                return 10
+            } else {
+                return weather?.hourly.data.count ?? 0                
+            }
         case 2:
-            return weather?.daily.data.count ?? 0
+              return weather?.daily.data.count ?? 0
         case 3:
             return 3
         default:
