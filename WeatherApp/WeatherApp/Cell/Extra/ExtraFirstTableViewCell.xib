@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slw-Q3-Boc">
-                        <rect key="frame" x="318" y="47" width="42" height="21"/>
+                        <rect key="frame" x="283" y="47" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -45,11 +45,11 @@
                 </subviews>
                 <color key="backgroundColor" red="0.062745098039215685" green="0.2627450980392157" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="zOU-3s-too" firstAttribute="top" secondItem="KAf-BR-SDL" secondAttribute="bottom" constant="16" id="7sX-IS-OoQ"/>
+                    <constraint firstItem="zOU-3s-too" firstAttribute="top" secondItem="KAf-BR-SDL" secondAttribute="bottom" constant="8" id="7sX-IS-OoQ"/>
                     <constraint firstItem="KAf-BR-SDL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="FvD-KB-VSY"/>
                     <constraint firstItem="HhW-fi-X0W" firstAttribute="leading" secondItem="zOU-3s-too" secondAttribute="trailing" constant="128" id="G4e-qs-EyK"/>
                     <constraint firstItem="Slw-Q3-Boc" firstAttribute="leading" secondItem="KAf-BR-SDL" secondAttribute="trailing" constant="128" id="KKl-OL-IAT"/>
-                    <constraint firstItem="HhW-fi-X0W" firstAttribute="top" secondItem="Slw-Q3-Boc" secondAttribute="bottom" constant="16" id="Vxf-NX-WFA"/>
+                    <constraint firstItem="HhW-fi-X0W" firstAttribute="top" secondItem="Slw-Q3-Boc" secondAttribute="bottom" constant="8" id="Vxf-NX-WFA"/>
                     <constraint firstItem="Slw-Q3-Boc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ZV0-uM-LpX"/>
                     <constraint firstAttribute="bottom" secondItem="zOU-3s-too" secondAttribute="bottom" constant="16" id="d7U-3L-zMn"/>
                     <constraint firstAttribute="trailing" secondItem="HhW-fi-X0W" secondAttribute="trailing" constant="32" id="iQc-Di-fE1"/>
