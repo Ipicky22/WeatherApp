@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,33 +18,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="340" height="138.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvh-bB-Oj8">
-                        <rect key="frame" x="149" y="13" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvh-bB-Oj8">
+                        <rect key="frame" x="16" y="8" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAH-el-SEg">
-                        <rect key="frame" x="149" y="55" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAH-el-SEg">
+                        <rect key="frame" x="224" y="8" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6y-dO-38d">
-                        <rect key="frame" x="149" y="94" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6y-dO-38d">
+                        <rect key="frame" x="282" y="8" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-TV-Fqh">
+                        <rect key="frame" x="74" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="aPt-7w-YVj"/>
+                            <constraint firstAttribute="width" constant="50" id="eOC-Hd-2Rn"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.99526685037349483" blue="0.19928649988049618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="Gvh-bB-Oj8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6Tt-ZI-ctq"/>
+                    <constraint firstAttribute="bottom" secondItem="V6y-dO-38d" secondAttribute="bottom" constant="8" id="CcU-1i-5gM"/>
+                    <constraint firstAttribute="bottom" secondItem="cAH-el-SEg" secondAttribute="bottom" constant="8" id="Q6j-mt-CMr"/>
+                    <constraint firstItem="y9f-TV-Fqh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="a25-Hu-Bld"/>
+                    <constraint firstItem="cAH-el-SEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="aoI-Iy-ThW"/>
+                    <constraint firstItem="V6y-dO-38d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cds-8E-X32"/>
+                    <constraint firstItem="Gvh-bB-Oj8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="i81-51-cgC"/>
+                    <constraint firstAttribute="trailing" secondItem="V6y-dO-38d" secondAttribute="trailing" constant="16" id="jwz-IC-SaC"/>
+                    <constraint firstAttribute="bottom" secondItem="Gvh-bB-Oj8" secondAttribute="bottom" constant="8" id="p4h-RQ-CFQ"/>
+                    <constraint firstItem="cAH-el-SEg" firstAttribute="leading" secondItem="y9f-TV-Fqh" secondAttribute="trailing" constant="100" id="phR-00-JBN"/>
+                    <constraint firstItem="V6y-dO-38d" firstAttribute="leading" secondItem="cAH-el-SEg" secondAttribute="trailing" constant="16" id="uRs-vs-B9v"/>
+                    <constraint firstAttribute="bottom" secondItem="y9f-TV-Fqh" secondAttribute="bottom" constant="8" id="y8t-OH-SUH"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dayLabel" destination="Gvh-bB-Oj8" id="T96-Jl-UEB"/>
+                <outlet property="iconImage" destination="y9f-TV-Fqh" id="uOK-G8-tRg"/>
                 <outlet property="temperatureHighLabel" destination="cAH-el-SEg" id="bLl-eg-EXD"/>
                 <outlet property="temperatureLowLabel" destination="V6y-dO-38d" id="Cdq-d9-D06"/>
             </connections>

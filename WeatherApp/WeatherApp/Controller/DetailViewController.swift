@@ -7,15 +7,40 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     
     var annotationDetail: MKPointAnnotation?
     var weather: WeatherModel?
+    var vSpinner : UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        self.navigationItem.title = annotationDetail?.title
+        showSpinner(onView: self.view)
         requestCurrentlyDetail()
         setUpTableView()
     }
     
-    func requestCurrentlyDetail() {
+    private func showSpinner(onView : UIView) {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+       self.vSpinner = spinnerView
+    }
+    
+    private func removeSpinner() {
+        DispatchQueue.main.async {
+            self.vSpinner?.removeFromSuperview()
+            self.vSpinner = nil
+        }
+    }
+    
+    private func requestCurrentlyDetail() {
         RequestWeather.requestCurrently(
             latitude: annotationDetail?.coordinate.latitude ?? 0,
             longitude: annotationDetail?.coordinate.longitude ?? 0,
@@ -23,30 +48,41 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 let decoder = JSONDecoder()
                 self.weather = (try? decoder.decode(WeatherModel.self, from: data))
                 self.tableView.reloadData()
+                self.removeSpinner()
+                self.tableView.backgroundView = UIImageView(image: UIImage(named: "\(self.weather?.currently.icon ?? "")Picture"))
         }) { (error) in
             print(error)
         }
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
-    func setUpTableView() {
+   private func setUpTableView() {
         tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
         tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
         tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
         tableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: "DailyTableViewCell_ID")
+        tableView.register(UINib(nibName: "ExtraFirstTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraFirstTableViewCell_ID")
+        tableView.register(UINib(nibName: "ExtraTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraTableViewCell_ID")
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 1
         case 1:
-            return weather?.hourly.data.count ?? 0
+            if (weather?.hourly.data.count ?? 0 > 10) {
+                return 10
+            } else {
+                return weather?.hourly.data.count ?? 0
+            }
         case 2:
-            return weather?.daily.data.count ?? 0
+              return weather?.daily.data.count ?? 0
+        case 3:
+            return 3
         default:
             return 0
         }
@@ -57,20 +93,25 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         case 0:
             if let cellHeader = tableView.dequeueReusableCell(withIdentifier:"HeaderTableViewCell_ID", for: indexPath)
                 as? HeaderTableViewCell {
-                cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "")
+                cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "", iconHeader: weather?.currently.icon ?? "")
+                cellHeader.backgroundColor = UIColor.clear
                 return cellHeader
             }
+
         case 1:
             if indexPath.row == 0 {
                 if let cellHeaderHourly = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath)
                     as? ForecastTextTableViewCell {
                     cellHeaderHourly.configure(summary: weather?.hourly.summary ?? "")
+                    cellHeaderHourly.backgroundColor = UIColor.clear
                     return cellHeaderHourly
                 }
             } else {
                 if let cellDetailsHourly = tableView.dequeueReusableCell(withIdentifier: "HourlyTableViewCell_ID", for: indexPath)
                     as? HourlyTableViewCell {
-                    cellDetailsHourly.configure(time: weather?.hourly.data[indexPath.row].time ?? 0, temperature: weather?.hourly.data[indexPath.row].temperature ?? 0, humidity: weather?.hourly.data[indexPath.row].humidity ?? 0)
+                    cellDetailsHourly.configure(time: weather?.hourly.data[indexPath.row].time ?? 0, temperature: weather?.hourly.data[indexPath.row].temperature ?? 0, humidity: weather?.hourly.data[indexPath.row].humidity ?? 0,
+                                                iconHourly: weather?.hourly.data[indexPath.row].icon ?? "")
+                    cellDetailsHourly.backgroundColor = UIColor.clear
                     return cellDetailsHourly
                 }
             }
@@ -78,15 +119,39 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             if indexPath.row == 0 {
                 if let cellHeaderDaily = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath) as? ForecastTextTableViewCell {
                     cellHeaderDaily.configure(summary: weather?.daily.summary ?? "")
+                    cellHeaderDaily.backgroundColor = UIColor.clear
                     return cellHeaderDaily
                 }
             } else {
                 if let cellDetailDaily = tableView.dequeueReusableCell(withIdentifier: "DailyTableViewCell_ID", for: indexPath) as? DailyTableViewCell {
-                    cellDetailDaily.configure(day: weather?.daily.data[indexPath.row].time ?? 0, temperatureHigh:  weather?.daily.data[indexPath.row].temperatureHigh ?? 0, temperatureLow:  weather?.daily.data[indexPath.row].temperatureLow ?? 0)
+                    cellDetailDaily.configure(day: weather?.daily.data[indexPath.row].time ?? 0, temperatureHigh:  weather?.daily.data[indexPath.row].temperatureHigh ?? 0, temperatureLow:  weather?.daily.data[indexPath.row].temperatureLow ?? 0,
+                                            iconDaily: weather?.daily.data[indexPath.row].icon ?? ""  )
+                    cellDetailDaily.backgroundColor = UIColor.clear
                     return cellDetailDaily
                 }
             }
+        case 3:
+            if indexPath.row == 0 {
+                if let cellHeaderExtra = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath) as? ForecastTextTableViewCell {
+                    cellHeaderExtra.configure(summary: "Extra Informations")
+                    cellHeaderExtra.backgroundColor = UIColor.clear
+                    return cellHeaderExtra
+                }
+            } else if indexPath.row == 1 {
+                if let cellExtraFirst = tableView.dequeueReusableCell(withIdentifier: "ExtraFirstTableViewCell_ID", for: indexPath) as? ExtraFirstTableViewCell {
+                    cellExtraFirst.configure(humidity: weather?.currently.humidity ?? 0, windSpeed: weather?.currently.windSpeed ?? 0)
+                    cellExtraFirst.backgroundColor = UIColor.clear
+                    return cellExtraFirst
+                }
+            } else {
+                if let cellExtra = tableView.dequeueReusableCell(withIdentifier: "ExtraTableViewCell_ID", for: indexPath) as? ExtraTableViewCell {
+                    cellExtra.configure(pressure: weather?.currently.pressure ?? 0, uvIndex: weather?.currently.uvIndex ?? 0)
+                    cellExtra.backgroundColor = UIColor.clear
+                    return cellExtra
+                }
+            }
             
+
         default:
             return UITableViewCell()
         }

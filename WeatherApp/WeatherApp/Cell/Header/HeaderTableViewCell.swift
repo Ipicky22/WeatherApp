@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeaderTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var iconImage: UIImageView!
     
-    func configure(temperature: Double, summary: String){
-        temperatureLabel.text = String(temperature)
+    func configure(temperature: Double, summary: String, iconHeader: String){
+        temperatureLabel.text = String("\(Int(temperature))°C")
         summaryLabel.text = summary
+        iconImage.image = UIImage(named: "\(iconHeader).png")
     }
 }

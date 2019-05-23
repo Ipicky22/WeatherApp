@@ -1,21 +1,72 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ExtraTableViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="KGk-i7-Jjw" customClass="ExtraTableViewCell" customModule="WeatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="116"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="392" height="115.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLr-ob-Oc4">
+                        <rect key="frame" x="186" y="16" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hR-Yw-bJf">
+                        <rect key="frame" x="16" y="16" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-rP-Bt7">
+                        <rect key="frame" x="16" y="53" width="45" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-59-8g0">
+                        <rect key="frame" x="189" y="53" width="45" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RGl-rP-Bt7" firstAttribute="top" secondItem="7hR-Yw-bJf" secondAttribute="bottom" constant="8" id="0TZ-0D-2Nt"/>
+                    <constraint firstAttribute="bottom" secondItem="RGl-rP-Bt7" secondAttribute="bottom" constant="16" id="63z-Gk-zQo"/>
+                    <constraint firstAttribute="bottom" secondItem="WRX-59-8g0" secondAttribute="bottom" constant="16" id="6TT-wj-iOa"/>
+                    <constraint firstItem="7hR-Yw-bJf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="FR6-U1-g4A"/>
+                    <constraint firstItem="RGl-rP-Bt7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Rah-Cr-FBU"/>
+                    <constraint firstItem="WRX-59-8g0" firstAttribute="leading" secondItem="RGl-rP-Bt7" secondAttribute="trailing" constant="128" id="RuM-LX-nU8"/>
+                    <constraint firstAttribute="trailing" secondItem="WRX-59-8g0" secondAttribute="trailing" constant="32" id="Tav-WU-blx"/>
+                    <constraint firstItem="OLr-ob-Oc4" firstAttribute="leading" secondItem="7hR-Yw-bJf" secondAttribute="trailing" constant="128" id="XvE-BO-5rI"/>
+                    <constraint firstItem="7hR-Yw-bJf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="fpm-cE-8be"/>
+                    <constraint firstItem="OLr-ob-Oc4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gvd-f2-68k"/>
+                    <constraint firstItem="WRX-59-8g0" firstAttribute="leading" secondItem="OLr-ob-Oc4" secondAttribute="leading" id="nyp-5v-gQH"/>
+                    <constraint firstItem="WRX-59-8g0" firstAttribute="top" secondItem="OLr-ob-Oc4" secondAttribute="bottom" constant="8" id="uRb-P6-4qW"/>
+                    <constraint firstAttribute="trailing" secondItem="OLr-ob-Oc4" secondAttribute="trailing" constant="32" id="vPA-8h-QTm"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="pressureLabel" destination="RGl-rP-Bt7" id="obF-IL-5j4"/>
+                <outlet property="pressureTitleLabel" destination="7hR-Yw-bJf" id="rW0-As-pPz"/>
+                <outlet property="uvIndexLabel" destination="WRX-59-8g0" id="YVv-cq-vOL"/>
+                <outlet property="uvIndexTitleLabel" destination="OLr-ob-Oc4" id="CwP-Sc-efh"/>
+            </connections>
+            <point key="canvasLocation" x="98.550724637681171" y="62.276785714285708"/>
         </tableViewCell>
     </objects>
 </document>

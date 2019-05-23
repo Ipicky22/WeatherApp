@@ -9,16 +9,21 @@
 import UIKit
 
 class ExtraTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    
+    @IBOutlet weak var pressureTitleLabel: UILabel!
+    @IBOutlet weak var uvIndexTitleLabel: UILabel!
+    
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var uvIndexLabel: UILabel!
+    
+    func configure(pressure: Double, uvIndex: Int) {
+        
+        pressureTitleLabel.text = "Pressure"
+        uvIndexTitleLabel.text = "UV Index"
+        
+        pressureLabel.text = String("\(Int(pressure)) hPa")
+        uvIndexLabel.text = String(uvIndex)
+        
+    }
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cfY-WN-22N">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +16,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JJc-Tc-UQo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.74056739500000002" blue="0.085028804629999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.99607843137254903" green="0.77254901960784317" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Aar-C2-XWb" kind="relationship" relationship="rootViewController" id="cnU-Fx-cLQ"/>
@@ -38,25 +37,46 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="48S-NB-1vp">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CVn-58-KbW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="48S-NB-1vp" id="T5m-qI-1vu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.77254901960784317" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="CVn-58-KbW" firstAttribute="top" secondItem="gC9-gn-Gy1" secondAttribute="top" id="DyU-pr-CqV"/>
                             <constraint firstItem="WdG-cB-CA0" firstAttribute="bottom" secondItem="48S-NB-1vp" secondAttribute="bottom" id="Kl2-Bh-wyb"/>
+                            <constraint firstItem="WdG-cB-CA0" firstAttribute="bottom" secondItem="CVn-58-KbW" secondAttribute="bottom" id="NVC-cq-nLV"/>
                             <constraint firstItem="48S-NB-1vp" firstAttribute="leading" secondItem="WdG-cB-CA0" secondAttribute="leading" id="Oyj-53-fn2"/>
                             <constraint firstItem="WdG-cB-CA0" firstAttribute="trailing" secondItem="48S-NB-1vp" secondAttribute="trailing" id="PD8-Va-JNE"/>
+                            <constraint firstItem="WdG-cB-CA0" firstAttribute="trailing" secondItem="CVn-58-KbW" secondAttribute="trailing" id="ZGI-FV-rTM"/>
                             <constraint firstItem="48S-NB-1vp" firstAttribute="top" secondItem="WdG-cB-CA0" secondAttribute="top" id="hgL-xy-2Vf"/>
+                            <constraint firstItem="CVn-58-KbW" firstAttribute="leading" secondItem="WdG-cB-CA0" secondAttribute="leading" id="rUU-Mm-TyV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WdG-cB-CA0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mIk-yK-o5s"/>
+                    <navigationItem key="navigationItem" id="mIk-yK-o5s">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="v5I-SF-43e">
+                            <connections>
+                                <action selector="pressButton:" destination="Aar-C2-XWb" id="4W3-5h-TJT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="button" destination="v5I-SF-43e" id="WZf-Jh-zL1"/>
                         <outlet property="mapView" destination="48S-NB-1vp" id="HFP-YO-avQ"/>
+                        <outlet property="tableView" destination="CVn-58-KbW" id="S9C-UK-QKe"/>
                         <segue destination="oyc-5m-4tS" kind="show" identifier="DetailWeather_ID" id="9Jj-Tw-acv"/>
+                        <segue destination="oyc-5m-4tS" kind="show" identifier="CityTableViewCell_ID" id="Alh-M9-4xa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xp-xo-AOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="72"/>
+            <point key="canvasLocation" x="673.125" y="71.83098591549296"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="DEK-rO-cv0">
@@ -66,12 +86,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-S5-9tr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-S5-9tr">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99774390459060669" green="0.77286416292190552" blue="0.29627600312232971" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gN6-oT-bqp" firstAttribute="trailing" secondItem="ObU-S5-9tr" secondAttribute="trailing" id="Azb-yO-Mac"/>
                             <constraint firstItem="ObU-S5-9tr" firstAttribute="top" secondItem="gN6-oT-bqp" secondAttribute="top" id="Vkf-u9-KmA"/>
@@ -89,4 +111,7 @@
             <point key="canvasLocation" x="1523" y="72"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Alh-M9-4xa"/>
+    </inferredMetricsTieBreakers>
 </document>

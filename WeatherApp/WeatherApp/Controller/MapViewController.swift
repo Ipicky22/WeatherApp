@@ -2,36 +2,101 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var button: UIBarButtonItem!
+    
+    var cities: [City] = CitiesData.list
+    
+    @IBAction func pressButton(_ sender: Any) {
+        
+        if tableView.isHidden == true {
+            tableView.isHidden = false
+            mapView.isHidden = true
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "worldwide")
+            
+        } else {
+            
+            mapView.isHidden = false
+            tableView.isHidden = true
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")
+        }
+    }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         mapView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.navigationItem.title = "Weather"
+        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")
         
         for city in CitiesData.list {
+            
             let pin = MKPointAnnotation()
             pin.coordinate = city.coordinates
             pin.title = city.name
             mapView.addAnnotation(pin)
         }
+        
+        setUpTableView()
+    }
+    
+    
+    private func setUpTableView() {
+        tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: "CityTableViewCell_ID")
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? MKPointAnnotation  {
+            mapView.deselectAnnotation(annotation, animated: false)
             performSegue(withIdentifier: "DetailWeather_ID", sender: annotation)
         }
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cellCity = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell_ID", for: indexPath) as? CityTableViewCell {
+            cellCity.configure(city: cities[indexPath.row].name)
+            return cellCity
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CityTableViewCell_ID", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+    
         if segue.identifier == "DetailWeather_ID" {
-            if let detailsWeather = segue.destination as? DetailViewController {
-                detailsWeather.annotationDetail = sender as? MKPointAnnotation
+            if let detailsWeatherMap = segue.destination as? DetailViewController {
+                detailsWeatherMap.annotationDetail = sender as? MKPointAnnotation
+            }
+        } else if segue.identifier == "CityTableViewCell_ID" {
+            if let detailsWeatherList = segue.destination as? DetailViewController,
+                let element = tableView.indexPathForSelectedRow {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = cities[element.row].coordinates
+                annotation.title = cities[element.row].name
+                detailsWeatherList.annotationDetail = annotation
+                tableView.deselectRow(at: element, animated: false)
             }
         }
     }
     
-    
 }
+
