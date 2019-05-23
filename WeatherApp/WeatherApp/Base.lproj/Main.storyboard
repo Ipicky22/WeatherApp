@@ -70,6 +70,7 @@
                         <outlet property="mapView" destination="48S-NB-1vp" id="HFP-YO-avQ"/>
                         <outlet property="tableView" destination="CVn-58-KbW" id="S9C-UK-QKe"/>
                         <segue destination="oyc-5m-4tS" kind="show" identifier="DetailWeather_ID" id="9Jj-Tw-acv"/>
+                        <segue destination="oyc-5m-4tS" kind="show" identifier="CityTableViewCell_ID" id="Alh-M9-4xa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xp-xo-AOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,4 +113,7 @@
     <resources>
         <image name="menu" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Alh-M9-4xa"/>
+    </inferredMetricsTieBreakers>
 </document>

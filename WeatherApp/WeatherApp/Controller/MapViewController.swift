@@ -2,7 +2,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSource {
+class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBOutlet weak var mapView: MKMapView!
@@ -30,6 +30,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         
         mapView.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
         self.navigationItem.title = "Weather"
         
         for city in CitiesData.list {
@@ -52,6 +53,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "CityTableViewCell_ID", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
     }
@@ -65,6 +70,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
         if segue.identifier == "DetailWeather_ID" {
             if let detailsWeatherMap = segue.destination as? DetailViewController {
                 detailsWeatherMap.annotationDetail = sender as? MKPointAnnotation
