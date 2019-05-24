@@ -1,12 +1,13 @@
+//
+//  CitiesData.swift
+//  WeatherApp
+//
+//  Created by Efreitech on 22/05/2019.
+//  Copyright © 2019 Adrien & Maxime. All rights reserved.
+//
+
 import Foundation
 import CoreLocation
-
-
-struct City {
-    
-    var name: String
-    var coordinates: CLLocationCoordinate2D
-}
 
 struct CitiesData {
     
@@ -30,4 +31,5 @@ struct CitiesData {
         City(name: "Honolulu", coordinates: CLLocationCoordinate2D(latitude: 21.3069, longitude: -157.8583)),
         City(name: "Noumea", coordinates: CLLocationCoordinate2D(latitude: -22.2711, longitude: 166.4416))
     ]
+    
 }

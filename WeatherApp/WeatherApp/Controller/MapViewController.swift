@@ -1,3 +1,11 @@
+//
+//  MapViewController.swift
+//  WeatherApp
+//
+//  Created by Efreitech on 22/05/2019.
+//  Copyright © 2019 Adrien & Maxime. All rights reserved.
+//
+
 import UIKit
 import MapKit
 import CoreLocation
@@ -18,8 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
             tableView.isHidden = false
             mapView.isHidden = true
             
-            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "worldwide")?
-                .withRenderingMode(.alwaysOriginal)
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "worldwide")?.withRenderingMode(.alwaysOriginal)
             
         } else {
             
@@ -36,17 +43,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         mapView.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
-        title = "Weather"
+        
+        title = "WeatherApp"
         self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
         
-        for city in CitiesData.list {
+        for city in cities {
             
             let pin = MKPointAnnotation()
             pin.coordinate = city.coordinates
             pin.title = city.name
             mapView.addAnnotation(pin)
         }
-        
         setUpTableView()
     }
     

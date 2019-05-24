@@ -1,3 +1,11 @@
+//
+//  DetailViewController.swift
+//  WeatherApp
+//
+//  Created by Efreitech on 22/05/2019.
+//  Copyright © 2019 Adrien & Maxime. All rights reserved.
+//
+
 import UIKit
 import MapKit
 
@@ -10,9 +18,12 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     var vSpinner : UIView?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         tableView.dataSource = self
+        
         self.navigationItem.title = annotationDetail?.title
+        
         showSpinner(onView: self.view)
         requestCurrentlyDetail()
         setUpTableView()
@@ -55,10 +66,6 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-    
     private func setUpTableView() {
         tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
         tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
@@ -68,6 +75,9 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         tableView.register(UINib(nibName: "ExtraTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraTableViewCell_ID")
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -95,6 +105,8 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 as? HeaderTableViewCell {
                 cellHeader.configure(temperature: weather?.currently.temperature ?? 0, summary: weather?.currently.summary ?? "", iconHeader: weather?.currently.icon ?? "")
                 cellHeader.backgroundColor = UIColor.clear
+                cellHeader.summaryLabel.textColor = UIColor.white
+                cellHeader.temperatureLabel.textColor = UIColor.white
                 return cellHeader
             }
             
@@ -104,6 +116,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                     as? ForecastTextTableViewCell {
                     cellHeaderHourly.configure(summary: weather?.hourly.summary ?? "")
                     cellHeaderHourly.backgroundColor = UIColor.clear
+                    cellHeaderHourly.summaryLabel.textColor = UIColor.white
                     return cellHeaderHourly
                 }
             } else {
@@ -113,6 +126,9 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                                                 iconHourly: weather?.hourly.data[indexPath.row].icon ?? "",
                                                 timezone: weather?.timezone ?? "")
                     cellDetailsHourly.backgroundColor = UIColor.clear
+                    cellDetailsHourly.humidityLabel.textColor = UIColor.white
+                    cellDetailsHourly.temperatureLabel.textColor = UIColor.white
+                    cellDetailsHourly.timeLabel.textColor = UIColor.white
                     return cellDetailsHourly
                 }
             }
@@ -121,13 +137,19 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 if let cellHeaderDaily = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath) as? ForecastTextTableViewCell {
                     cellHeaderDaily.configure(summary: weather?.daily.summary ?? "")
                     cellHeaderDaily.backgroundColor = UIColor.clear
+                    cellHeaderDaily.summaryLabel.textColor =  UIColor.white
                     return cellHeaderDaily
                 }
             } else {
                 if let cellDetailDaily = tableView.dequeueReusableCell(withIdentifier: "DailyTableViewCell_ID", for: indexPath) as? DailyTableViewCell {
+                    
                     cellDetailDaily.configure(day: weather?.daily.data[indexPath.row].time ?? 0, temperatureHigh:  weather?.daily.data[indexPath.row].temperatureHigh ?? 0, temperatureLow:  weather?.daily.data[indexPath.row].temperatureLow ?? 0,
                                               iconDaily: weather?.daily.data[indexPath.row].icon ?? ""  )
+                    
                     cellDetailDaily.backgroundColor = UIColor.clear
+                    cellDetailDaily.dayLabel.textColor = UIColor.white
+                    cellDetailDaily.temperatureHighLabel.textColor = UIColor.white
+                    cellDetailDaily.temperatureLowLabel.textColor = UIColor.white
                     return cellDetailDaily
                 }
             }
@@ -135,24 +157,36 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             if indexPath.row == 0 {
                 if let cellHeaderExtra = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath) as? ForecastTextTableViewCell {
                     cellHeaderExtra.configure(summary: "Extra Informations")
+                    
                     cellHeaderExtra.backgroundColor = UIColor.clear
+                    cellHeaderExtra.summaryLabel.textColor = UIColor.white
                     return cellHeaderExtra
                 }
             } else if indexPath.row == 1 {
                 if let cellExtraFirst = tableView.dequeueReusableCell(withIdentifier: "ExtraFirstTableViewCell_ID", for: indexPath) as? ExtraFirstTableViewCell {
                     cellExtraFirst.configure(humidity: weather?.currently.humidity ?? 0, windSpeed: weather?.currently.windSpeed ?? 0)
+                    
                     cellExtraFirst.backgroundColor = UIColor.clear
+                    cellExtraFirst.humidityLabel.textColor = UIColor.white
+                    cellExtraFirst.humidityTitleLabel.textColor = UIColor.white
+                    cellExtraFirst.windSpeedLabel.textColor = UIColor.white
+                    cellExtraFirst.windSpeedTitleLabel.textColor = UIColor.white
+                    
                     return cellExtraFirst
                 }
             } else {
                 if let cellExtra = tableView.dequeueReusableCell(withIdentifier: "ExtraTableViewCell_ID", for: indexPath) as? ExtraTableViewCell {
                     cellExtra.configure(pressure: weather?.currently.pressure ?? 0, uvIndex: weather?.currently.uvIndex ?? 0)
+                    
+                    cellExtra.pressureTitleLabel.textColor = UIColor.white
+                    cellExtra.pressureLabel.textColor = UIColor.white
+                    cellExtra.uvIndexTitleLabel.textColor = UIColor.white
+                    cellExtra.uvIndexLabel.textColor = UIColor.white
                     cellExtra.backgroundColor = UIColor.clear
                     return cellExtra
                 }
             }
-            
-            
+                        
         default:
             return UITableViewCell()
         }

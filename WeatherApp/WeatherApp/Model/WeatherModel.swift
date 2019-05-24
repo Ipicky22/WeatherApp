@@ -1,3 +1,11 @@
+//
+//  WeatherModel.swift
+//  WeatherApp
+//
+//  Created by Efreitech on 22/05/2019.
+//  Copyright © 2019 Adrien & Maxime. All rights reserved.
+//
+
 import Foundation
 
 struct WeatherModel: Decodable {

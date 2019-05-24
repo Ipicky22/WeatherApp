@@ -3,7 +3,7 @@
 //  WeatherApp
 //
 //  Created by Efreitech on 22/05/2019.
-//  Copyright © 2019 Adrien. All rights reserved.
+//  Copyright © 2019 Adrien & Maxime. All rights reserved.
 //
 
 import UIKit
