@@ -25,14 +25,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         if tableView.isHidden == true {
             tableView.isHidden = false
             mapView.isHidden = true
-            
+            title = "List Cities"
             self.navigationItem.rightBarButtonItem?.image = UIImage(named: "worldwide")?.withRenderingMode(.alwaysOriginal)
             
         } else {
             
             mapView.isHidden = false
             tableView.isHidden = true
+            title = "Map Cities"
             self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
+            
         }
     }
     
@@ -44,7 +46,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         tableView.dataSource = self
         tableView.delegate = self
         
-        title = "WeatherApp"
+        title = "Map Cities"
         self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
         
         for city in cities {
@@ -56,7 +58,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         }
         setUpTableView()
     }
-    
     
     private func setUpTableView() {
         tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: "CityTableViewCell_ID")
@@ -88,9 +89,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let backItem = UIBarButtonItem()
-        backItem.title = "Back"
+        backItem.title = "Cities"
         navigationItem.backBarButtonItem = backItem
-    
+        
         if segue.identifier == "DetailWeather_ID" {
             if let detailsWeatherMap = segue.destination as? DetailViewController {
                 detailsWeatherMap.annotationDetail = sender as? MKPointAnnotation
