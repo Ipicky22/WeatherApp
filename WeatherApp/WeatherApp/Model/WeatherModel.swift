@@ -10,7 +10,7 @@ import Foundation
 
 struct WeatherModel: Decodable {
 
-    // Model à partir de Currently de l'api
+    // Model from Currently => API
     struct Currently: Decodable {
         
         var icon: String
@@ -22,20 +22,20 @@ struct WeatherModel: Decodable {
         var uvIndex: Int
     }
     
-    // Model à partir de Hourly de l'api
+    // Model from Hourly => API
     struct Hourly: Decodable {
         var summary: String
         var data: [DataHourly]
     }
     
-    struct DataHourly: Decodable{
+    struct DataHourly: Decodable {
         var time: Double
         var icon: String
         var humidity: Double
         var temperature: Double
     }
     
-    // Model à partir de Daily de l'api
+    // Model from Daily => API
     struct Daily: Decodable {
         
         var summary: String

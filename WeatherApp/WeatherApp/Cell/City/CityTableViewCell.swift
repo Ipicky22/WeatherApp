@@ -9,10 +9,12 @@
 import UIKit
 
 class CityTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var cityLabel: UILabel!
     
     func configure(city: String) {
+        
         cityLabel.text = city
+        
     }
 }

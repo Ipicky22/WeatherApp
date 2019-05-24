@@ -15,6 +15,7 @@ struct RequestWeather {
         
         let key: String = "72827366bc934debcd54331c8e3392ca"
         
+        // ?units=si => conversion internatinal system
         Alamofire.request("https://api.darksky.net/forecast/\(key)/\(latitude),\(longitude)?units=si").responseData{ (response) in
             switch response.result {
             case.success(let value):

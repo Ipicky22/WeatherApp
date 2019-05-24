@@ -12,14 +12,37 @@ import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    
+    // IBOutlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var button: UIBarButtonItem!
     
+    // Variable
     var cities: [City] = CitiesData.list
     
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        mapView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        title = "Map Cities"
+        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
+        
+        // Coordinates
+        for city in cities {
+            let pin = MKPointAnnotation()
+            pin.coordinate = city.coordinates
+            pin.title = city.name
+            mapView.addAnnotation(pin)
+        }
+        
+        setUpTableView()
+    }
+    
+    // Display MapView or TableView
     @IBAction func pressButton(_ sender: Any) {
         
         if tableView.isHidden == true {
@@ -36,27 +59,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
             self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
             
         }
-    }
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        mapView.delegate = self
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        title = "Map Cities"
-        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
-        
-        for city in cities {
-            
-            let pin = MKPointAnnotation()
-            pin.coordinate = city.coordinates
-            pin.title = city.name
-            mapView.addAnnotation(pin)
-        }
-        setUpTableView()
     }
     
     private func setUpTableView() {

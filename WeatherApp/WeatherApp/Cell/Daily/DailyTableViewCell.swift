@@ -17,12 +17,18 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     
     func configure(day: Double, temperatureHigh: Double, temperatureLow: Double, iconDaily: String ) {
+        
+        // CONVERSION
+        // Returns a date object initialized relative to 00:00:00 UTC on 1 January 1970 by a given number of seconds
         let date = NSDate(timeIntervalSince1970: day)
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("EEEE")
+        
+        // VALUES
         dayLabel.text = "\(formatter.string(from: date as Date))"
         temperatureHighLabel.text = String("\(Int(temperatureLow))°C")
         temperatureLowLabel.text = String("\(Int(temperatureHigh))°C")
         iconImage.image = UIImage(named: "\(iconDaily)")
+        
     }
 }

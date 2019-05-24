@@ -17,18 +17,24 @@ class HourlyTableViewCell: UITableViewCell {
     
     func configure(time: Double, temperature: Double, humidity: Double, iconHourly: String, timezone: String) {
         
+        // CONVERSION
+        // Returns a date object initialized relative to 00:00:00 UTC on 1 January 1970 by a given number of seconds
         let date = NSDate(timeIntervalSince1970: time)
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("HH")
-        formatter.timeZone = TimeZone(identifier: timezone)
-        timeLabel.text = "\(formatter.string(from: date as Date))"
+        formatter.timeZone = TimeZone(identifier: timezone)          // local time (city)
         
+        // VALUES
+        timeLabel.text = "\(formatter.string(from: date as Date))"
         temperatureLabel.text = String("\(Int(temperature))°C")
+        iconImage.image = UIImage(named: "\(iconHourly)")
+        
+        // Condition requested in exercise
         if Int(humidity * 100) > 0 {
-          humidityLabel.text = String("\(Int(humidity * 100))%")
+            humidityLabel.text = String("\(Int(humidity * 100))%")
         } else {
             humidityLabel.text = ""
         }
-        iconImage.image = UIImage(named: "\(iconHourly)")
+        
     }
 }
