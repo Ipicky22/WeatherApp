@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-TV-Fqh">
-                        <rect key="frame" x="74" y="8" width="50" height="50"/>
+                        <rect key="frame" x="118" y="8" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="aPt-7w-YVj"/>
                             <constraint firstAttribute="width" constant="50" id="eOC-Hd-2Rn"/>
@@ -47,6 +47,7 @@
                 <constraints>
                     <constraint firstItem="Gvh-bB-Oj8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6Tt-ZI-ctq"/>
                     <constraint firstAttribute="bottom" secondItem="V6y-dO-38d" secondAttribute="bottom" constant="8" id="CcU-1i-5gM"/>
+                    <constraint firstItem="cAH-el-SEg" firstAttribute="leading" secondItem="y9f-TV-Fqh" secondAttribute="trailing" constant="56" id="PRg-LD-Jow"/>
                     <constraint firstAttribute="bottom" secondItem="cAH-el-SEg" secondAttribute="bottom" constant="8" id="Q6j-mt-CMr"/>
                     <constraint firstItem="y9f-TV-Fqh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="a25-Hu-Bld"/>
                     <constraint firstItem="cAH-el-SEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="aoI-Iy-ThW"/>
@@ -54,7 +55,6 @@
                     <constraint firstItem="Gvh-bB-Oj8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="i81-51-cgC"/>
                     <constraint firstAttribute="trailing" secondItem="V6y-dO-38d" secondAttribute="trailing" constant="16" id="jwz-IC-SaC"/>
                     <constraint firstAttribute="bottom" secondItem="Gvh-bB-Oj8" secondAttribute="bottom" constant="8" id="p4h-RQ-CFQ"/>
-                    <constraint firstItem="cAH-el-SEg" firstAttribute="leading" secondItem="y9f-TV-Fqh" secondAttribute="trailing" constant="100" id="phR-00-JBN"/>
                     <constraint firstItem="V6y-dO-38d" firstAttribute="leading" secondItem="cAH-el-SEg" secondAttribute="trailing" constant="16" id="uRs-vs-B9v"/>
                     <constraint firstAttribute="bottom" secondItem="y9f-TV-Fqh" secondAttribute="bottom" constant="8" id="y8t-OH-SUH"/>
                 </constraints>
