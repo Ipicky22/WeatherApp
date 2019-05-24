@@ -44,5 +44,6 @@ struct WeatherModel: Decodable {
     var currently: Currently
     var hourly: Hourly
     var daily: Daily
+    var timezone: String
 }
 

@@ -30,7 +30,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             onView.addSubview(spinnerView)
         }
         
-       self.vSpinner = spinnerView
+        self.vSpinner = spinnerView
     }
     
     private func removeSpinner() {
@@ -54,12 +54,12 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             print(error)
         }
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
-   private func setUpTableView() {
+    private func setUpTableView() {
         tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell_ID")
         tableView.register(UINib(nibName: "ForecastTextTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastTextTableViewCell_ID")
         tableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: "HourlyTableViewCell_ID")
@@ -67,7 +67,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         tableView.register(UINib(nibName: "ExtraFirstTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraFirstTableViewCell_ID")
         tableView.register(UINib(nibName: "ExtraTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraTableViewCell_ID")
     }
-
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -80,7 +80,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 return weather?.hourly.data.count ?? 0
             }
         case 2:
-              return weather?.daily.data.count ?? 0
+            return weather?.daily.data.count ?? 0
         case 3:
             return 3
         default:
@@ -97,7 +97,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 cellHeader.backgroundColor = UIColor.clear
                 return cellHeader
             }
-
+            
         case 1:
             if indexPath.row == 0 {
                 if let cellHeaderHourly = tableView.dequeueReusableCell(withIdentifier: "ForecastTextTableViewCell_ID", for: indexPath)
@@ -110,7 +110,8 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 if let cellDetailsHourly = tableView.dequeueReusableCell(withIdentifier: "HourlyTableViewCell_ID", for: indexPath)
                     as? HourlyTableViewCell {
                     cellDetailsHourly.configure(time: weather?.hourly.data[indexPath.row].time ?? 0, temperature: weather?.hourly.data[indexPath.row].temperature ?? 0, humidity: weather?.hourly.data[indexPath.row].humidity ?? 0,
-                                                iconHourly: weather?.hourly.data[indexPath.row].icon ?? "")
+                                                iconHourly: weather?.hourly.data[indexPath.row].icon ?? "",
+                                                timezone: weather?.timezone ?? "")
                     cellDetailsHourly.backgroundColor = UIColor.clear
                     return cellDetailsHourly
                 }
@@ -125,7 +126,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
             } else {
                 if let cellDetailDaily = tableView.dequeueReusableCell(withIdentifier: "DailyTableViewCell_ID", for: indexPath) as? DailyTableViewCell {
                     cellDetailDaily.configure(day: weather?.daily.data[indexPath.row].time ?? 0, temperatureHigh:  weather?.daily.data[indexPath.row].temperatureHigh ?? 0, temperatureLow:  weather?.daily.data[indexPath.row].temperatureLow ?? 0,
-                                            iconDaily: weather?.daily.data[indexPath.row].icon ?? ""  )
+                                              iconDaily: weather?.daily.data[indexPath.row].icon ?? ""  )
                     cellDetailDaily.backgroundColor = UIColor.clear
                     return cellDetailDaily
                 }
@@ -151,7 +152,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 }
             }
             
-
+            
         default:
             return UITableViewCell()
         }
