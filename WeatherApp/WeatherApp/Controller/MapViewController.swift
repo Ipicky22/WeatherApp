@@ -17,13 +17,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         if tableView.isHidden == true {
             tableView.isHidden = false
             mapView.isHidden = true
-            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "worldwide")
+            
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "worldwide")?
+                .withRenderingMode(.alwaysOriginal)
             
         } else {
             
             mapView.isHidden = false
             tableView.isHidden = true
-            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
         }
     }
     
@@ -34,8 +36,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         mapView.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
-        self.navigationItem.title = "Weather"
-        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")
+        title = "Weather"
+        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
         
         for city in CitiesData.list {
             
